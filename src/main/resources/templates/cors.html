@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            // cors 요청 _ 특정 컨트롤러 -> 성공
+            // cors 요청 _ 전역
+            $.ajax("http://localhost:9090/api/test")
+                .done(function(msg){
+                    alert(msg);
+                })
+                .fail(function(){
+                    alert("cors test fail!!!");
+                })
+
+
+            // cors 요청_ 전역 -> 성공
+            // $.ajax("http://localhost:9090/api/home")
+            //     .done(function(rep){
+            //         for (let i = 0; i < rep.length; i++) {
+            //             let board = rep[i];
+            //
+            //             let title = board['title'];
+            //             let username = board['username'];
+            //             let contents = board['contents'];
+            //
+            //             console.log(title, username, contents);
+            //         }
+            //
+            //     })
+            //     .fail(function(){
+            //         alert("cors test fail!!!");
+            //     })
+        })
+    </script>
+</body>
+</html>
